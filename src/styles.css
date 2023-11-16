@@ -1,0 +1,24 @@
+@import 'ag-grid-community/styles/ag-grid.css';
+@import 'ag-grid-community/styles/ag-theme-alpine.css';
+
+*{
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    background-color: var(--background-color);
+}
+
+
+:root{
+    --text-color: rgb(255, 255, 255);
+    --main-color: rgb(8, 29, 65);
+    --background-color:  rgb(7,7,21);
+
+}
+
