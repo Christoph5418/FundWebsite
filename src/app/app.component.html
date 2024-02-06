@@ -1,0 +1,56 @@
+<div *ngIf="page == 'HOME'">
+    <app-home-page></app-home-page>
+</div>
+
+<div *ngIf="page == 'COM'">
+    <app-sector [sector]="'COM'" [sectorName]="'Communication Services'" [sectorIndex]="'XLC'" [sectorNum]="110"></app-sector>
+</div>
+
+<div *ngIf="page == 'CD'">
+    <app-sector [sector]="'CD'" [sectorName]="'Consumer Discretionary'" [sectorIndex]="'XLY'" [sectorNum]="111"></app-sector>
+</div>
+
+<div *ngIf="page == 'CS'">
+    <app-sector [sector]="'CS'" [sectorName]="'Consumer Staples'" [sectorIndex]="'XLP'" [sectorNum]="112"></app-sector>
+</div>
+
+<div *ngIf="page == 'E'">
+    <app-sector [sector]="'E'" [sectorName]="'Energy'" [sectorIndex]="'XLE'" [sectorNum]="113"></app-sector>
+</div>
+
+<div *ngIf="page == 'F'">
+    <app-sector [sector]="'FIN'" [sectorName]="'Financials'" [sectorIndex]="'XLF'" [sectorNum]="114"></app-sector>
+</div>
+
+<div *ngIf="page == 'H'">
+    <app-sector [sector]="'H'" [sectorName]="'Healthcare'" [sectorIndex]="'XLV'" [sectorNum]="115"></app-sector>
+</div>
+
+<div *ngIf="page == 'I'">
+    <app-sector [sector]="'IND'" [sectorName]="'Industrials'" [sectorIndex]="'XLI'" [sectorNum]="116"></app-sector>
+</div>
+
+<div *ngIf="page == 'IT'">
+    <app-sector [sector]="'IT'" [sectorName]="'Information Technology'" [sectorIndex]="'XLK'" [sectorNum]="117"></app-sector>
+</div>
+
+<div *ngIf="page == 'M'">
+    <app-sector [sector]="'MAT'" [sectorName]="'Materials'" [sectorIndex]="'XLB'" [sectorNum]="118"></app-sector>
+</div>
+
+<div *ngIf="page == 'RE'">
+    <app-sector [sector]="'RE'" [sectorName]="'Real Estate'" [sectorIndex]="'XLRE'" [sectorNum]="119"></app-sector>
+</div>
+
+<div *ngIf="page == 'U'">
+    <app-sector [sector]="'U'" [sectorName]="'Utilities'" [sectorIndex]="'XLU'" [sectorNum]="120"></app-sector>
+</div>
+
+<div *ngIf="page == 'STRATEGY'">
+    <app-strategy></app-strategy>
+</div>
+
+
+
+
+<app-navbar></app-navbar>
