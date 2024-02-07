@@ -17,8 +17,8 @@ export class AppComponent implements OnInit, OnDestroy {
   private subscriptions: Subscription[] = [];
 
 
-  private apiUrl = 'http://172.16.33.178:5001/sheets';
-  //private apiUrl = 'http://45.79.173.173:5001/sheets';
+  //private apiUrl = 'http://172.16.33.178:5001/sheets';
+  private apiUrl = 'https://45.79.173.173:5001/sheets';
 
   constructor(
     private sharedDataStore: DataShareService,
