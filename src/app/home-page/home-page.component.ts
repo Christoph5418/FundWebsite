@@ -15,7 +15,6 @@ import { Subscription } from 'rxjs';
 })
 export class HomePageComponent implements OnInit {
 
-  
     pagData: any;
     sectorData: any[] = [];
     chart: any
@@ -85,9 +84,13 @@ export class HomePageComponent implements OnInit {
       if(this.isMobile){
         this.aspectRatio = 1.35
       }
-      
 
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      let count = this.sharedDataStore.getCount();
+
+      if(count == 1){
+        console.log(count)
+        await new Promise(resolve => setTimeout(resolve, 1500));
+      }
 
       this.pagData = this.sharedDataStore.getGSInfo();
 
