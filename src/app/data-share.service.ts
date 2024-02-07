@@ -9,6 +9,7 @@ export class DataShareService {
 
   private storageKey = 'myArrayData';
 
+  private count: any = 0;
 
   private sharedVariableSubject = new BehaviorSubject<string>('HOME'); // Initialize with 'HOME'
   
@@ -21,6 +22,11 @@ export class DataShareService {
   stockDataInfo: any[] = []
 
   
+  getCount():number{
+    this.count++;
+    return this.count;
+  }
+
   setGSInfo(data: any): void{
     this.stockInfo = data
   }
