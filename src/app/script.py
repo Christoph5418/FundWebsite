@@ -9,7 +9,7 @@ from googleapiclient.discovery import build
 from google.cloud import language
 
 app = Flask(__name__)
-# sslify = SSLify(app)
+sslify = SSLify(app)
 
 CORS(app)
 
@@ -52,5 +52,5 @@ def get_sheets():
         return jsonify(error="Error occurred while fetching data from Google Sheets."), 500
 
 if __name__ == '__main__':
-    # app.run(host='0.0.0.0', port=5001, ssl_context=('/etc/letsencrypt/live/nittanylionfundportfoliorisk.com/cert.pem', '/etc/letsencrypt/live/nittanylionfundportfoliorisk.com/privkey.pem'))
-     app.run(host='0.0.0.0', port=5001)
+     app.run(host='0.0.0.0', port=5001, ssl_context=('/etc/letsencrypt/live/nittanylionfundportfoliorisk.com/cert.pem', '/etc/letsencrypt/live/nittanylionfundportfoliorisk.com/privkey.pem'))
+     #app.run(host='0.0.0.0', port=5001)
