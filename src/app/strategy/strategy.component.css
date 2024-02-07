@@ -1,0 +1,164 @@
+body{
+    transform: translateY(175px);
+    width: 100%;
+    color: white;
+
+    height: 100vh;
+    margin: 0;
+
+}
+
+
+.form-container {
+    text-align: center;
+    flex: 1;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    margin: 10px 0;
+    display: block;
+}
+
+#monte-text{
+    font-size: 36px;
+}
+
+input[type="text"] {
+    padding: 8px;
+    font-size: 16px;
+    width: 195px;
+    border: 1px solid #ababab;
+    border-radius: 5px;
+}
+
+.button-group button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 200px;
+    transition: background-color 0.5s ease;
+}
+
+.button-group button:hover {
+    background-color: #367e39;
+}
+
+.strategy-text{
+    display: flex;
+    justify-content: center;
+}
+
+.strategy-text h1{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+
+.monte-carlo, .frontier{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 7%;
+    gap: 10%
+}
+
+.graph{
+    flex: 5;   
+}
+
+.input-groups{
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+}
+
+#error{
+    color: red;
+    font-size: 16px;
+}
+
+#added{
+    color: white;
+    font-size: 16px;
+}
+
+#frontier-text{
+    font-size: 36px;
+    width: 400px;
+}
+
+.button-group-frontier button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 150px;
+    transition: background-color 0.5s ease;
+}
+
+.button-group-frontier button:hover {
+    background-color: #367e39;
+}
+
+#del{
+    background-color: rgb(181, 0, 0);
+}
+
+#del:hover{
+    background-color: rgb(132, 0, 0);
+}
+
+.stock-names{
+    font-size: 20px;
+    padding: 0px 10px 0px 10px;
+    min-width: 100px;
+}
+
+.tickers{
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 200px;
+    flex-direction: row;
+    min-width: 100px;
+}
+
+
+input:disabled{
+    background-color: white;
+}
+
+
+@media(max-width: 675px){
+
+    .monte-carlo, .frontier{
+        flex-direction: column;
+    }
+
+
+    input[type="text"] {
+
+        width: 150px;
+
+    }
+
+    #myChart{
+        margin-top: 75px;
+    }
+
+}
+

@@ -1,0 +1,49 @@
+<body>
+    <header>
+        <div (click)="updateHome()" class="left-corner">
+            <div class="left-section">
+                <img class ='logo' src="/assets/images/navbar/psulogo.png">
+                <div class="logo-text">
+                    <label id="psu">PennState</label>
+                    <label id="bottom">Smeal College of Business</label>
+                </div>
+            </div>
+            <div class="right-section">
+                <label>Nittany Lion Fund</label>
+            </div>
+        </div>
+
+
+        <ul class = "navbar">
+            <li id="home"><label (click)="updateHome()">Home</label></li>
+                <div class="dropdown">
+                    <li><label >Sector <i class="fa fa-chevron-down"></i></label></li>
+                    <div class="items">
+                        <label id='first-sector' (click)="updateCOM()">Communication Services</label>
+                        <label (click)="updateCD()" >Consumer Discretionary</label>
+                        <label (click)="updateCS()">Consumer Staples</label>
+                        <label (click)="updateE()" >Energy</label>
+                        <label (click)="updateF()">Financials</label>
+                        <label (click)="updateH()">Healthcare</label>
+                        <label (click)="updateI()">Industrials</label>
+                        <label (click)="updateIT()">Information Technology</label>
+                        <label (click)="updateM()">Materials</label>
+                        <label (click)="updateRE()">Real Estate</label>
+                        <label (click)="updateU()">Utilites</label>
+
+
+                    </div>
+                </div>
+
+            <li><label (click)="updateStrategy()">Strategy</label></li>
+        </ul>
+
+        <div class = "main">
+            <div class = "bx bx-menu" id ="menu-icon" (click)= "toggleMenu()"></div>
+        </div>
+
+
+    </header>
+</body>
+
+

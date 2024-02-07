@@ -1,0 +1,97 @@
+<body>
+    <br>
+    <div class="sector-text">
+        <h1>Nittany Lion Fund</h1>
+    </div>
+    <h4 id="beta">Beta Value: {{beta}}</h4>
+
+
+    <br><br><br><br><br>
+    <br>
+
+    <div class="centered-container">
+        <div class="chart-container" style="width: 850px;">
+          <canvas id="HomeChart"></canvas>
+        </div>
+    </div>
+
+
+
+
+
+    <br><br><br><br><br>
+
+
+    <div class="daily">
+        <h1 class="daily-performance-text">Daily Performance</h1>
+        <h4 id="mover">Most Volatile Today</h4>
+
+        <br><br><br><br>
+
+        <div class="sector-change">
+            <div *ngFor="let stock of movers; let i = index;" class="stock-change">
+                <div *ngIf="movers[i]['Percent Change'][0] == '-'" class="col">
+                    <label id="tick">{{movers[i]['Ticker']}}</label>
+                    <label id="cp">{{movers[i]['Current Price']}}</label>
+                    <label id="pc-neg"><i class="fas fa-arrow-down"></i> {{movers[i]['Percent Change']}}</label>
+                </div>
+                <div *ngIf="movers[i]['Percent Change'][0] != '-'" class="col">
+                    <label id="tick">{{movers[i]['Ticker']}}</label>
+                    <label id="cp">{{movers[i]['Current Price']}}</label>
+                    <label id="pc-pos"><i class="fas fa-arrow-up"></i> {{movers[i]['Percent Change']}}</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <br><br><br><br><br>
+
+
+    <h1 class="holdings-text">Holdings Overview</h1>
+    <br><br><br>
+
+    <div class="table-container">
+        <ag-grid-angular 
+            style="width: 900px" 
+            [style.height]="tableHeight"
+            class="ag-theme-alpine-dark"
+            [rowData]="rowData" 
+            [columnDefs]="columnDefs">
+        </ag-grid-angular>
+    </div>
+
+    <br><br><br><br><br>
+    <br><br>
+
+    
+    <div class="comp-text">
+        <h1>Portfolio Composition</h1>
+    </div>
+
+    <br><br><br><br><br>
+    <br><br><br>
+
+    <div  id="chart" style="transform: scale(1.5);">
+        <canvas baseChart
+            [type]="'pie'"
+            [datasets]="pieChartDatasets"
+            [labels]="pieChartLabels"
+            [options]="pieChartOptions"
+            [plugins]="pieChartPlugins"
+            [legend]="pieChartLegend">
+    </canvas>
+    </div>
+
+
+
+
+
+
+    <br><br><br><br><br>
+    <br><br><br><br><br>
+    <br><br><br><br><br>
+    <br><br><br><br><br>
+
+</body>
+
