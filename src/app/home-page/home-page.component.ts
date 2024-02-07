@@ -87,7 +87,7 @@ export class HomePageComponent implements OnInit {
       }
       
 
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise(resolve => setTimeout(resolve, 1500));
 
       this.pagData = this.sharedDataStore.getGSInfo();
 
