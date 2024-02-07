@@ -6,8 +6,8 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class StockPriceService {
- private apiUrl = 'http://172.16.33.178:5001/stock-data';
-//private apiUrl = 'http://45.79.173.173:5001/sheets';
+//private apiUrl = 'http://172.16.33.178:5001/stock-data';
+private apiUrl = 'https://45.79.173.173:5001/sheets';
 
 
   constructor(private http: HttpClient) { }
