@@ -18,7 +18,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
 
   //private apiUrl = 'http://172.16.33.178:5001/sheets';
-  private apiUrl = 'https://45.79.173.173:5001/sheets';
+  private apiUrl = 'https://www.nittanylionfundportfoliorisk.com:5001/sheets';
 
   constructor(
     private sharedDataStore: DataShareService,
