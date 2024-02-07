@@ -78,7 +78,7 @@ export class HomePageComponent implements OnInit {
   
   
 
-    ngOnInit(): void { 
+    async ngOnInit(): Promise<void> { 
       //checks if mobile
       this.isMobile = window.innerWidth < 675;
 
@@ -86,8 +86,12 @@ export class HomePageComponent implements OnInit {
         this.aspectRatio = 1.35
       }
       
+
+      await new Promise(resolve => setTimeout(resolve, 1000));
+
+      this.pagData = this.sharedDataStore.getGSInfo();
+
       //gets current data
-     this.pagData = this.sharedDataStore.getGSInfo();
       this.getSectorData();
   }
  
