@@ -1,0 +1,49 @@
+<body>
+    <header>
+        <div routerLink="/" class="left-corner">
+            <div class="left-section">
+                <img class ='logo' src="/assets/images/navbar/psulogo.png">
+                <div class="logo-text">
+                    <label id="psu">PennState</label>
+                    <label id="bottom">Smeal College of Business</label>
+                </div>
+            </div>
+            <div class="right-section">
+                <label>Nittany Lion Fund</label>
+            </div>
+        </div>
+
+
+        <ul class = "navbar">
+            <li id="home"><label routerLink="/">Home</label></li>
+                <div class="dropdown">
+                    <li><label >Sector <i class="fa fa-chevron-down"></i></label></li>
+                    <div class="items">
+                        <label id='first-sector' routerLink="/communication-services">Communication Services</label>
+                        <label routerLink="/consumer-discretionary" >Consumer Discretionary</label>
+                        <label routerLink="/consumer-staples">Consumer Staples</label>
+                        <label routerLink="/energy" >Energy</label>
+                        <label routerLink="/financials">Financials</label>
+                        <label routerLink="/healthcare">Healthcare</label>
+                        <label routerLink="/industrials">Industrials</label>
+                        <label routerLink="/information-technology">Information Technology</label>
+                        <label routerLink="/materials">Materials</label>
+                        <label routerLink="/real-estate">Real Estate</label>
+                        <label routerLink="/utilities">Utilites</label>
+
+
+                    </div>
+                </div>
+
+            <li><label routerLink="/strategy">Strategy</label></li>
+        </ul>
+
+        <div class = "main">
+            <div class = "bx bx-menu" id ="menu-icon" (click)= "toggleMenu()"></div>
+        </div>
+
+
+    </header>
+</body>
+
+

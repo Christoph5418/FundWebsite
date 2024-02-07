@@ -1,0 +1,232 @@
+<body>
+    <br>
+    <div class="sector-text">
+        <h1>{{sectorName}}</h1>
+    </div>
+
+    <br><br><br><br><br>
+    <br>
+
+    <div class="centered-container">
+        <div class="chart-container" style="width: 50%;">
+          <canvas id="MyChart"></canvas>
+        </div>
+    </div>
+
+
+
+
+    <br><br><br>
+
+
+    <div class="daily">
+        <h1 class="daily-performance-text">Daily Performance</h1>
+
+        <br><br><br><br>
+
+        
+        <div class="sector-change">
+
+            <div *ngFor="let stock of rowData; let i = index;" class="stock-change">
+                <div *ngIf="rowData[i]['Percent Change'][0] == '-'" class="col">
+                    <label id="tick">{{rowData[i]['Ticker']}}</label>
+                    <label id="cp">{{rowData[i]['Current Price']}}</label>
+                    <label id="pc-neg"><i class="fas fa-arrow-down"></i> {{rowData[i]['Percent Change']}}</label>
+                </div>
+                
+
+                <div *ngIf="rowData[i]['Percent Change'][0] != '-'" class="col">
+                    <label id="tick">{{rowData[i]['Ticker']}}</label>
+                    <label id="cp">{{rowData[i]['Current Price']}}</label>
+                    <label id="pc-pos"><i class="fas fa-arrow-up"></i> {{rowData[i]['Percent Change']}}</label>
+                </div>                
+            </div>
+        </div>
+
+    </div>    
+    
+    <br><br><br><br><br>
+    
+    <h1 class="yearly-performance-text">Yearly Performance</h1>
+    <br><br>
+    <br><br>
+
+    <div class="daily-charts">
+        <div class="chart-container" style="width: 17.5%;">
+            <canvas id="0"></canvas>
+        </div>
+    
+        <div class="chart-container" style="width: 17.5%;">
+            <canvas id="1"></canvas>
+        </div>
+    
+        <div class="chart-container" style="width: 17.5%;">
+            <canvas id="2"></canvas>
+        </div>
+    
+    
+        <div class="chart-container" style="width: 17.5%;">
+            <canvas id="3"></canvas>
+        </div>
+    </div>
+    
+    <div class="daily-charts">
+        <div class="chart-container" style="width: 17.5%;">
+            <canvas id="4"></canvas>
+        </div>
+    
+        <div class="chart-container" style="width: 17.5%;">
+            <canvas id="5"></canvas>
+        </div>
+    
+        <div class="chart-container" style="width: 17.5%;">
+            <canvas id="6"></canvas>
+        </div>
+    
+    
+        <div class="chart-container" style="width: 17.5%;">
+            <canvas id="7"></canvas>
+        </div>
+    </div>
+
+
+    <div class="daily-charts">
+        <div class="chart-container" style="width: 17.5%;">
+            <canvas id="8"></canvas>
+        </div>
+    
+        <div class="chart-container" style="width: 17.5%;">
+            <canvas id="9"></canvas>
+        </div>
+    
+        <div class="chart-container" style="width: 17.5%;">
+            <canvas id="10"></canvas>
+        </div>
+    
+    
+        <div class="chart-container" style="width: 17.5%;">
+            <canvas id="11"></canvas>
+        </div>
+    </div>
+  
+   
+
+    <br><br><br><br><br>
+
+
+    <h1 class="holdings-text">Holdings Overview</h1>
+    <br><br><br>
+
+    <div class="table-container">
+        <ag-grid-angular 
+            style="width: 900px" 
+            [style.height]="tableHeight"
+            class="ag-theme-alpine-dark"
+            [rowData]="rowData" 
+            [columnDefs]="columnDefs">
+        </ag-grid-angular>
+    </div>
+
+    <br><br><br><br><br>
+    <br><br>
+
+    
+    <div class="comp-text">
+        <h1>Portfolio Composition</h1>
+    </div>
+
+    <br><br><br><br><br>
+    <br><br><br>
+
+    <div  id="chart" style="transform: scale(1.5);">
+        <canvas baseChart
+            [type]="'pie'"
+            [datasets]="pieChartDatasets"
+            [labels]="pieChartLabels"
+            [options]="pieChartOptions"
+            [plugins]="pieChartPlugins"
+            [legend]="pieChartLegend">
+    </canvas>
+    </div>
+
+    <br><br><br><br><br>
+    <br><br><br><br><br>
+
+
+    <h1 class="monte-text">Monte Carlos</h1>
+
+
+    <div class="monte-charts">
+
+        <div class="monte-chart" style="width: 40%;">
+            <canvas id="12"></canvas>
+        </div>
+    
+        <div class="monte-chart" style="width: 40%;">
+            <canvas id="13"></canvas>
+        </div>
+    </div>
+    
+ 
+    <div class="monte-charts">
+        <div class="monte-chart" style="width: 40%;">
+            <canvas id="14"></canvas>
+        </div>
+    
+        <div class="monte-chart" style="width: 40%;">
+            <canvas id="15"></canvas>
+        </div>
+    </div>
+
+    <div  *ngIf="finalMonte.length > 3" class="monte-charts">
+        <div class="monte-chart" style="width: 40%;">
+            <canvas id="16"></canvas>
+        </div>
+    
+        <div class="monte-chart" style="width: 40%;">
+            <canvas id="17"></canvas>
+        </div>
+    </div>
+
+    <div *ngIf="finalMonte.length > 5" class="monte-charts">
+        <div class="monte-chart" style="width: 40%;">
+            <canvas id="18"></canvas>
+        </div>
+    
+        <div class="monte-chart" style="width: 40%;">
+            <canvas id="19"></canvas>
+        </div>
+    </div>
+
+    <div *ngIf="finalMonte.length > 7" class="monte-charts">
+        <div class="monte-chart" style="width: 40%;">
+            <canvas id="20"></canvas>
+        </div>
+    
+        <div class="monte-chart" style="width: 40%;">
+            <canvas id="21"></canvas>
+        </div>
+    </div>
+
+    <div *ngIf="finalMonte.length > 9" class="monte-charts">
+        <div class="monte-chart" style="width: 40%;">
+            <canvas id="22"></canvas>
+        </div>
+    
+        <div class="monte-chart" style="width: 40%;">
+            <canvas id="23"></canvas>
+        </div>
+    </div>
+
+
+
+
+
+
+    <br><br><br><br><br>
+    <br><br><br><br><br>
+    <br><br><br><br><br>
+    <br><br><br><br><br>
+
+</body>
+

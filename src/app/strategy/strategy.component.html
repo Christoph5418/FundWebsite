@@ -1,0 +1,96 @@
+<body>
+
+    <div class="strategy-text">
+        <h1>Strategy</h1>
+    </div>
+
+    <br>
+
+    <div class="monte-carlo">
+        <div class="form-container">
+
+            <h1 id="monte-text">Monte Carlo</h1>
+            <br><br>
+            <div class="input-group">
+                <label for="ticker">Ticker:</label>
+                <input type="text" id="ticker" placeholder="Enter Ticker" [(ngModel)]="ticker">
+            </div>
+
+            <div class="input-groups">
+                <div class="input-group">
+                    <label for="ticker">Iterations</label>
+                    <input type="text" id="ticker" placeholder="Enter Iterations" [(ngModel)]="iterations">
+                </div>
+                
+                <div class="input-group">
+                    <label for="sigma">Days Forecasted</label>
+                    <input type="text" id="sigma" placeholder="Enter Days" [(ngModel)]="daysAhead">
+                </div>
+            </div>
+
+
+            <br><br>
+            
+            
+            <div class="button-group">
+                <button type="submit" (click)="monteCarlo()">Graph</button>
+            </div>
+
+            <br><br>
+            <label id="error">{{errorMessage}}</label>
+        </div>
+
+        <div class="graph">
+            <div class="chart-container" style="width: 100%;">
+                <canvas id="monteCarlo"></canvas>
+              </div>
+            </div>
+    </div>
+
+    <div class="frontier">
+        <div class="form-container">
+            <h1 id="frontier-text">Efficient Frontier</h1>
+            <br><br>
+            <div class="input-group">
+                <label for="tickerFrontier">Ticker:</label>
+                <input type="text" id="tickerFrontier" [disabled]="inputDisabled" placeholder="Enter Ticker" [(ngModel)]="tickerFrontier">
+            </div>
+
+
+            <br><br>
+            
+            
+            <div class="button-group-frontier">
+                <button type="submit" (click)="addFrontier()">Add</button>
+                <button id="del" type="submit" (click)="delFrontier()">Remove</button>
+            </div>
+
+            <br><br>
+
+            <div class="button-group-frontier">
+                <button type="submit" (click)="frontier()">Graph</button>
+            </div>
+
+
+
+            <br><br>
+            <label id="error">{{errorMessageFrontier}}</label>
+            <label id="added">{{addedMessage}}</label>
+
+            <div class="tickers">
+                <div class="stock-names" *ngFor="let ticker of frontiersName; let i = index">
+                    <label>{{frontiersName[i]}}</label>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="graph">
+            <div class="chart-container" style="width: 100%;">
+                <canvas id="myChart"></canvas>
+            </div>
+            </div>
+    </div>
+
+</body>
